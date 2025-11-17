@@ -50,10 +50,12 @@ criptomoedas_blockchain/
 │  ├─ scripts/                   → deploy, checagem de saldo, papéis etc.
 │  └─ README.md                  → instruções detalhadas de Hardhat
 └─ frontend/                     → painel React + Vite + Tailwind + ethers
-   └─ src/App.tsx                → interface conectada ao nó local (865 linhas)
+  ├─ src/context/AppContext.tsx → estado global com rede/contrato/contas
+  ├─ src/pages/                 → telas por tipo de usuário (Admin/Checker/Titular)
+  └─ src/App.tsx                → roteamento simples com seleção de papel inicial
 ```
 
-> **Quantidade total de código relevante:** ~1.131 linhas (contrato + testes + front). Conteúdo de bibliotecas externas não é contabilizado.
+> **Quantidade total de código relevante:** ~2.0 mil linhas (contrato 75, testes 191, front-end ~1.7 mil distribuídas entre contextos, componentes e páginas). Conteúdo de bibliotecas externas não é contabilizado.
 
 ## 5. Instalação e execução
 
@@ -91,7 +93,7 @@ npm run dev
 
 1. Acesse `http://localhost:5173`.
 2. Informe o endereço retornado no deploy e clique em **Conectar**.
-3. Utilize as abas **Admin**, **Checker** e **Titular** para executar transações reais contra o nó Hardhat (mint, concessão de papéis, check-in).
+3. Escolha o tipo de usuário (Admin, Checker ou Titular). Cada página carrega o formulário específico para o papel selecionado, sempre executando transações reais contra o nó Hardhat.
 
 ### 5.4 Métricas de desempenho
 
