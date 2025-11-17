@@ -83,6 +83,7 @@ No deploy local serão exibidos o endereço do contrato e a conta admin/checker 
 ### 5.3 Passos (front-end)
 
 ```bash
+cd ..
 cd frontend
 npm install
 npm run dev
