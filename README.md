@@ -71,7 +71,10 @@ npm install
 # opcional: configurar .env para Polygon Amoy
 npx hardhat compile
 npx hardhat test
-npx hardhat node                       # manter aberto
+npx hardhat node                       # manter aberto e abrir outro terminal
+
+# no outro terminal
+cd nft-tickets
 npx hardhat run scripts/deploy.js --network localhost
 ```
 
